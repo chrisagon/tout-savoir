@@ -133,7 +133,7 @@ const Home: NextPage = () => {
 
           <div className="flex my-4 items-center space-x-3">
             <span className="w-7 h-7 rounded-full bg-black text-white text-center leading-7">3</span>
-            <p className="text-left font-medium">Select difficulty</p>
+            <p className="text-left font-medium">Selection du niveau de réponse</p>
           </div>
           <div className="block">
             <DropDown2 vibe2={difficulty} setVibe2={(newDifficulty) => setDifficulty(newDifficulty)} />
