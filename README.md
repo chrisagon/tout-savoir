@@ -1,6 +1,6 @@
-# [Teach Anything](https://www.teach-anything.com/)
+# [Tout Savoir](https://www.teach-anything.com/)
 
-Teach you anything in seconds use AI.
+Tout savoir sur un sujet en quelques secondes grâce à l'I.A.
 
 https://user-images.githubusercontent.com/2337506/216798367-2b5e3bc7-5cbd-4173-9ea7-0e1e85ea87dc.mov
 
@@ -42,7 +42,7 @@ https://user-images.githubusercontent.com/2337506/216798367-2b5e3bc7-5cbd-4173-9
 </table>
 
 ## Language support
-`English`, `Simplified Chinese`, `Traditional Chinese`, `Japanese`, `Italian`, `German`, `Spanish`,`French`,`Dutch` ,`Korean`,`Khmer`, `Hindi`
+`French`,`English`, `Simplified Chinese`, `Traditional Chinese`, `Japanese`, `Italian`, `German`, `Spanish`,`Dutch` ,`Korean`,`Khmer`, `Hindi`
 
 PR welcome
 
