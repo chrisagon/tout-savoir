@@ -11,6 +11,7 @@ function classNames(...classes: string[]) {
 }
 
 const vibes = [
+  "Français",
   "English",
   "中文",
   "繁體中文",
@@ -18,7 +19,6 @@ const vibes = [
   "Italiano",
   "Español",
   "Deutsch",
-  "Français",
   "Nederlands",
   "한국어",
   "ភាសាខ្មែរ",
