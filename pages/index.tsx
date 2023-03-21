@@ -104,7 +104,7 @@ const Home: NextPage = () => {
 
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-2 sm:my-16">
         <h1 className="sm:text-4xl text-2xl max-w-1xl font-bold text-slate-900">
-          Teach you <span className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">Anything</span> in seconds
+          Tout <span className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">COMPRENDRE</span> en quelques secondes
         </h1>
         <p className="text-slate-500 my-5">458.777 réponses déjà générés.</p>
         <div className="max-w-xl w-full">
