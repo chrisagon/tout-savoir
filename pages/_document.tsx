@@ -4,7 +4,7 @@ import Script from 'next/script';
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="fr">
         <Head>
          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
@@ -12,16 +12,16 @@ class MyDocument extends Document {
          <link rel="manifest" href="/site.webmanifest"></link>
           <meta
             name="description"
-            content="Teach you anything in seconds use AI."
+            content="Tout savoir sur un sujet en quelques secondes grâce à l'I.A."
           />
           <meta
             property="og:description"
-            content="Teach you anything in seconds use AI."
+            content="Tout savoir sur un sujet en quelques secondes grâce à l'I.A."
           />
-          <meta property="og:title" content="Teach Anything" />
+          <meta property="og:title" content="Tout savoir" />
           <meta
             name="twitter:description"
-            content="Teach you anything in seconds use AI."
+            content="Tout savoir sur un sujet en quelques secondes grâce à l'I.A."
           />
           <meta
             property="og:image"
@@ -30,14 +30,8 @@ class MyDocument extends Document {
           <meta name="twitter:card" content="summary_large_image"/>
           <meta name="twitter:site" content="@lvwzhen"/>
           <meta name="twitter:title" content="Teach Anything"/>
-          <meta name="twitter:description" content="Teach you anything in seconds use AI"/>
+          <meta name="twitter:description" content="Tout savoir sur un sujet en quelques secondes grâce à l'I.A."/>
           <meta name="twitter:image" content="https://www.teach-anything.com/og-image.png"/>
-          <Script
-             id="Adsense-id"
-             data-ad-client="ca-pub-9181833886721130"
-             strategy="beforeInteractive"
-             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          />
         </Head>
         <body>
           <Main />
