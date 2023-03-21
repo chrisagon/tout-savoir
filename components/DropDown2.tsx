@@ -11,7 +11,7 @@ function classNames(...classes: string[]) {
 }
 
 const vibes = [
-  "Easy",
+  "Simple",
   "Professional",
 ] as const;
 
