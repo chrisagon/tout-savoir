@@ -16,13 +16,14 @@ const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [desc, setDesc] = useState("");
-  const [lang, setLang] = useState<VibeType>("English");
-  const [difficulty, setDifficulty] = useState<VibeType2>("Easy");
+  const [lang, setLang] = useState<VibeType>("Français");
+  const [difficulty, setDifficulty] = useState<VibeType2>("Simple");
   const [generatedDescs, setGeneratedDescs] = useState<string>("");
-  const defultDesc = 'How to explain relativity?'
+  const defultDesc = 'Explique moi comment fonctionne une dynamo ?'
 
   console.log("Streamed response: ", {generatedDescs});
   let promptObj = {
+    "Français": "French",
     'English': "UK English",
     "中文": "Simplified Chinese",
     "繁體中文": "Traditional Chinese",
@@ -30,7 +31,6 @@ const Home: NextPage = () => {
     "Italiano": "Italian",
     "Deutsch": "German",
     "Español": "Spanish",
-    "Français": "French",
     "Nederlands": "Dutch",
     "한국어": "Korean",
     "ភាសាខ្មែរ":"Khmer",
@@ -38,14 +38,14 @@ const Home: NextPage = () => {
     "Indonesian" : "Indonesian"
   }
   let difficultyObj = {
-    'Easy': "Easy",
+    'Simple': "Simple",
     'Professional': "Professional",
   }
   let text = desc||defultDesc
   
   const generateDesc = async (e: any) => {
     let prompt;
-    if (difficultyObj[difficulty]=="Easy"){
+    if (difficultyObj[difficulty]=="Simple"){
       prompt = `Explain ${text}${text.slice(-1) === "." ? "" : "."} to a 6nd grader in ${promptObj[lang]} with a simple example.`;
     } else{
       prompt = `Explain ${text}${text.slice(-1) === "." ? "" : "."} in ${promptObj[lang]}  in technical terms, divided into two paragraphs, principles and applications. Output format, Principle:, Application.`;
@@ -93,7 +93,7 @@ const Home: NextPage = () => {
   return (
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Head>
-        <title>Teach Anything</title>
+        <title>Tout Savoir</title>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
@@ -106,12 +106,12 @@ const Home: NextPage = () => {
         <h1 className="sm:text-4xl text-2xl max-w-1xl font-bold text-slate-900">
           Teach you <span className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">Anything</span> in seconds
         </h1>
-        <p className="text-slate-500 my-5">458,777 answers generated so far.</p>
+        <p className="text-slate-500 my-5">458.777 réponses déjà générés.</p>
         <div className="max-w-xl w-full">
           <div className="flex mt-4 items-center space-x-3 mb-3">
             <span className="w-7 h-7 rounded-full bg-black text-white text-center leading-7">1</span>
             <p className="text-left font-medium">
-              Write your question
+              Ecris ta question 
             </p>
           </div>
           <textarea
@@ -125,7 +125,7 @@ const Home: NextPage = () => {
           />
           <div className="flex my-4 items-center space-x-3">
             <span className="w-7 h-7 rounded-full bg-black text-white text-center leading-7">2</span>
-            <p className="text-left font-medium">Select your language</p>
+            <p className="text-left font-medium">Selection du langage</p>
           </div>
           <div className="block">
             <DropDown vibe={lang} setVibe={(newLang) => setLang(newLang)} />
@@ -145,7 +145,7 @@ const Home: NextPage = () => {
                 className="bg-black md:flex-1 rounded-xl text-white font-medium px-4 py-2 hover:bg-black/80 w-full"
                 onClick={(e) => generateDesc(e)}
               >
-                Generate answer
+                Générer une réponse
               </button>
             )}
             {loading && (
@@ -174,7 +174,7 @@ const Home: NextPage = () => {
                 <>
                   <div>
                     <h2 className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto">
-                      The answer is
+                      Voici ma réponse 
                     </h2>
                   </div>
                   <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto  whitespace-pre-wrap">
@@ -183,7 +183,7 @@ const Home: NextPage = () => {
                       className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border text-left"
                       onClick={() => {
                         navigator.clipboard.writeText(generatedDescs);
-                        toast("Text copied to clipboard", {
+                        toast("Texte copié dans le presse papier", {
                           icon: "✂️",
                         });
                       }}
@@ -204,41 +204,6 @@ const Home: NextPage = () => {
               <svg className="w-4 h-4 mr-2 -ml-1" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.4 151.7c.325 4.548 .325 9.097 .325 13.65 0 138.7-105.6 298.6-298.6 298.6-59.45 0-114.7-17.22-161.1-47.11 8.447 .974 16.57 1.299 25.34 1.299 49.06 0 94.21-16.57 130.3-44.83-46.13-.975-84.79-31.19-98.11-72.77 6.498 .974 12.99 1.624 19.82 1.624 9.421 0 18.84-1.3 27.61-3.573-48.08-9.747-84.14-51.98-84.14-102.1v-1.299c13.97 7.797 30.21 12.67 47.43 13.32-28.26-18.84-46.78-51.01-46.78-87.39 0-19.49 5.197-37.36 14.29-52.95 51.65 63.67 129.3 105.3 216.4 109.8-1.624-7.797-2.599-15.92-2.599-24.04 0-57.83 46.78-104.9 104.9-104.9 30.21 0 57.5 12.67 76.67 33.14 23.72-4.548 46.46-13.32 66.6-25.34-7.798 24.37-24.37 44.83-46.13 57.83 21.12-2.273 41.58-8.122 60.43-16.24-14.29 20.79-32.16 39.31-52.63 54.25z"></path></svg>
               Share on Twitter
             </a>
-        </div>
-        <div className="my-5 max-w-xl w-full">
-          <h2 className=" text-slate-400 mb-4">SUPPORTED BY</h2>
-          <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-            <li>
-              <a href="https://magickpen.com/" className="flex px-2 items-center justify-center h-14 hover:bg-slate-50 rounded-lg hover:transition-all">
-                <img className="h-6 object-contain" src="/magickpen.svg" alt="MagickPen" />
-              </a>
-            </li>
-            <li>
-              <a href="https://e.cash" className="flex px-2 items-center justify-center h-14 hover:bg-slate-50 rounded-lg hover:transition-all">
-                <img className="h-6 object-contain" src="/ecash.png" alt="eCash" />
-              </a>
-            </li>
-            <li>
-              <a href="https://neuronadigital.academy/" className="flex px-2 items-center justify-center h-14 hover:bg-slate-50 rounded-lg hover:transition-all">
-                <img className="h-6 object-contain" src="/NeuronaDigital.jpg" alt="Neurona Digital" />
-              </a>
-            </li>
-            <li>
-              <a href="https://talentorg.com.cn/" className="flex px-2 items-center justify-center h-14 hover:bg-slate-50 rounded-lg hover:transition-all">
-                <img className="h-6 object-contain" src="/talentorg.svg" alt="TalentOrg-雇佣全世界Top1%的人才" />
-              </a>
-            </li>
-            <li>
-              <a href="https://sailboatui.com/?ref=teach-anything" className="flex px-2 items-center justify-center h-14 hover:bg-slate-50 rounded-lg hover:transition-all">
-                <img className="h-6 object-contain"src="/sailboatui.svg" alt="Sailboat UI" />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.buymeacoffee.com/lvwzhen" className="flex px-2 items-center justify-center h-14 hover:bg-slate-100 rounded-lg hover:transition-all border border-dashed border-slate-200 bg-slate-50">
-                <p className="h-6 leading-6">❤️ Your logo</p>
-              </a>
-            </li>
-          </ul>
         </div>
       </main>
       <Footer />
